@@ -29,8 +29,8 @@ module Griddler
 
       attr_reader :params
 
-      def parse_recipients(mailin_to)
-        mailin_to.map do | obj |
+      def parse_recipients(lines)
+        Array(lines).map do | obj |
           "#{obj['name']} <#{obj['address']}>"
         end
       end
